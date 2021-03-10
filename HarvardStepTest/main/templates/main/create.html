@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Add new result
+{% endblock %}
+
+{% block body %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+        <h3>Add new result</h3><br>
+        <form method="post">
+            {% csrf_token %}
+            {% form.name %}<br>
+            {% form.age %}<br>
+            <button type="submit" class="btn btn-success">Add</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
+{% endblock %}

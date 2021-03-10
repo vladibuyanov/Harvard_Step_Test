@@ -1,11 +1,22 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-    Harvard Step Test
+    {{ title }}
 {% endblock %}
 
 {% block body %}
-    <container>
-        Harvard Step Test
-    </container>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+          <h1 class="display-4">Harvard Step Test</h1>
+          <p class="lead">
+              {% if result %}
+                  {% for el in results %}
+                    <div>
+                        {{ el.name }}
+                        {{ el.result }}
+                    </div>
+                  {% endfor %}
+        {% else %}
+        <p>Nothing to show</p>
+        {% endif %}
+    </div>
 {% endblock %}
