@@ -9,8 +9,12 @@
         <h3>Add new result</h3><br>
         <form method="post">
             {% csrf_token %}
-            {% form.name %}<br>
-            {% form.age %}<br>
+            {{ form.name }}<br>
+            {{ form.age }}<br>
+            {{ form.time }}<br>
+            {{ form.f1 }}<br>
+            {{ form.f2 }}<br>
+            {{ form.f3 }}<br>
             <button type="submit" class="btn btn-success">Add</button>
             <span>{{ error }}</span>
         </form>
