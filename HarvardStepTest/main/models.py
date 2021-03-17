@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Results(models.Model):
+class ResultInput(models.Model):
     name = models.CharField('Name', max_length=50)
     age = models.IntegerField('Age')
     time = models.IntegerField('Time')
@@ -12,3 +12,10 @@ class Results(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def result(self):
+        result = self.time * 100 / (self.f1 + self.f2 + self.f3) * 2
+        return result
+
+

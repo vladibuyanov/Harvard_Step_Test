@@ -5,18 +5,22 @@
 {% endblock %}
 
 {% block body %}
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-          <h1 class="display-4">Harvard Step Test</h1>
-          <p class="lead">
-              {% if results %}
-                  {% for el in results %}
-                    <div>
-                        {{ el.name }}
-                        {{ el.age }}
-                    </div>
-                  {% endfor %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <p class="lead">
+        {% if results %}
+        <table>
+            {% for el in ihst %}
+            <tr>
+                <th>{{ el.id }}</th>
+                <td>{{ el.name }}</td>
+                <td>{{ el.result }}</td>
+            {% endfor %}
+            </tr>
+        </table>
         {% else %}
-        <p>Nothing to show</p>
+            <p>Nothing to show</p>
         {% endif %}
-    </div>
+</div>
+
 {% endblock %}

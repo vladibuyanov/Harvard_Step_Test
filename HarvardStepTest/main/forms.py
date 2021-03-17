@@ -1,10 +1,10 @@
-from .models import Results
+from .models import ResultInput
 from django.forms import ModelForm, TextInput
 
 
 class ResultsForm(ModelForm):
     class Meta:
-        model = Results
+        model = ResultInput
         fields = ['name', 'age', 'time', 'f1', 'f2', 'f3']
         widgets = {
             'name': TextInput(
@@ -36,5 +36,5 @@ class ResultsForm(ModelForm):
                 attrs={
                     'class': 'form-control',
                     'placeholder': "Enter f2"}
-            )
+            ),
         }
